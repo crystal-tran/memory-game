@@ -29,9 +29,11 @@ body {
   width: 150px;
   height: 200px;
   margin: 10px;
-
 }
 
+#game div:hover {
+  cursor: pointer;
+}
 
 
 h1 {
@@ -52,7 +54,7 @@ p {
   border-radius: 10px;
   border: 2px solid #87986a;
   padding: 5px 12px;
-  margin: 20px;
+  margin: 15px;
 
 }
 
@@ -65,18 +67,25 @@ p {
 /*transition*/
 
 .transition-1 {
+  /* position of fixed and all offset values equal to zero to have background-color cover the whole viewport*/
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  /* z-index allows for stacking */
   z-index: 1;
+  /* background color of overlay */
   background-color: #e9f5db;
+  /* opacity of 0 makes the overlay invisible */
   opacity: 0;
+  /* disables pointer events when overlay is invisible */
   pointer-events: none;
+  /* duration of transition */
   transition: 0.5s ease-out;
 }
 
+/*the 'is-active' makes the overlay visible*/
 .transition-1.is-active {
   opacity: 1;
   pointer-events: all;
